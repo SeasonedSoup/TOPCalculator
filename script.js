@@ -13,12 +13,13 @@ const divide = function(x, y) {
     return x / y;
 }
 
-let firstNum;
-let operator;
-let secondNum;
+let firstNum = 2;
+let operator =  '+';
+let secondNum =3;
+
 //operate calls the four operator function based on string
 const operate = function(operator, firstNum, secondNum) {
-    switch(op){
+    switch(operator){
         case '+':
             return add(firstNum, secondNum);
 
