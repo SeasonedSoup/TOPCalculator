@@ -12,25 +12,56 @@ const multiply = function(x, y) {
 const divide = function(x, y) {
     return x / y;
 }
-
-let firstNum = 2;
-let operator =  '+';
-let secondNum =3;
+//test
+let firstNum = '';
+let operator =  '';
+let secondNum = '';
+let currentInput  = 'firstNum';
 
 //operate calls the four operator function based on string
 const operate = function(operator, firstNum, secondNum) {
     switch(operator){
-        case '+':
-            return add(firstNum, secondNum);
+        case '+': return add(firstNum, secondNum);
 
-        case '-':
-            return subtract(firstNum, secondNum);
+        case '-': return subtract(firstNum, secondNum);
         
-        case '*':
-            return multiply(firstNum, secondNum);
+        case '*': return multiply(firstNum, secondNum);
         
-        case '/':
-            return divide(firstNum, secondNum)
+        case '/': return divide(firstNum, secondNum);
     }
-        
 }
+
+// UI LOGIC
+
+const numButtons = document.querySelectorAll("button.num")
+
+numButtons.forEach((numButton) => {
+    numButton.addEventListener('click', () => {
+        if (operator === ''){
+            const value1 = numButton.textContent;
+            firstNum += value1;
+            console.log(firstNum);
+        } else {
+            const value2 = numButton.textContent;
+            secondNum += value2;
+            console.log(secondNum)
+        }
+
+    });
+});
+
+const opButtons = document.querySelectorAll("button.op");
+
+opButtons.forEach((opButton) => {
+    opButton.addEventListener('click', () => {
+        checkButton(opButton);
+    })
+})
+
+function checkButton(opButton) {
+    if (firstNum !== '') {
+        operator = opButton.textContent;
+    }
+}
+
+const equalButton = document.querySelector("button.equal");
