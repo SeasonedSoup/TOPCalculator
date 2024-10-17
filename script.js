@@ -16,7 +16,9 @@ const divide = function(x, y) {
 let firstNum = '';
 let operator =  '';
 let secondNum = '';
-let currentInput  = 'firstNum';
+let answer = '';
+
+const result = document.querySelector('p#result')
 
 //operate calls the four operator function based on string
 const operate = function(operator, firstNum, secondNum) {
@@ -59,9 +61,24 @@ opButtons.forEach((opButton) => {
 })
 
 function checkButton(opButton) {
-    if (firstNum !== '') {
-        operator = opButton.textContent;
+    if (firstNum !== '' && secondNum !== '') {
+        answer = operate(operator, parseFloat(firstNum), parseFloat(secondNum));
+        result.textContent = answer;
+        firstNum = answer.toString();
+        secondNum= '';
     }
+    operator = opButton.textContent;
 }
 
 const equalButton = document.querySelector("button.equal");
+
+equalButton.addEventListener('click', () => {
+    if(secondNum !== '') {
+        answer = operate(operator, parseFloat(firstNum), parseFloat(secondNum));
+        result.textContent = answer;
+
+        firstNum = answer.toString();
+        secondNum= '';
+        operator = '';
+    }
+})
