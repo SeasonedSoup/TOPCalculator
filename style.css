@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: black;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.input {
+    background-color: hsl(0, 2%, 31%);
+    display: flex;
+    overflow: hidden;
+}
+
+.top-buttons {
+    display: flex;
+}
+
+.row-1 {
+    display: flex;
+}
+
+.row-2 {
+    display: flex;
+}
+
+.row-3 {
+    display: flex;
+}
+
+.row-4 {
+    display: flex;
+}

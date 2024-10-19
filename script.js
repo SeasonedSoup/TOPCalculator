@@ -126,5 +126,24 @@ del.addEventListener('click', () => {
     else if  (firstNum !== '') {
         firstNum = firstNum.slice(0, -1);
         result.value = firstNum;
+        if (firstNum.length === 0) {
+            result.value = '0'
+        }
+    }
+})
+
+const decimal = document.querySelector("button.decimal")
+
+decimal.addEventListener('click', () => {
+    if (operator === ''){
+        if (!firstNum.includes('.')) {
+            firstNum += '.';
+            result.value = firstNum;
+        }
+    } else {
+        if (!secondNum.includes('.')) {
+            secondNum += '.';
+            result.value = firstNum + ' ' + operator + ' ' + secondNum;
+        }
     }
 })
