@@ -58,8 +58,10 @@ const opButtons = document.querySelectorAll("button.op");
 opButtons.forEach((opButton) => {
     opButton.addEventListener('click', () => {
         checkButton();
+        if (firstNum !== '') {
         operator = opButton.textContent
         result.value = firstNum + ' ' + operator
+        }
     })
 })
 

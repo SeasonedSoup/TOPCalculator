@@ -12,64 +12,82 @@ body {
 
 .calculator {
     background-color: black;
-    height: 200px;
-    width: 150px;
+    height: 400px;
+    width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 20px;
-    border-radius: 5px;
-    border: solid 1px gray;
+    gap: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    border: solid 2px gray;
 }
 
 button {
-    padding: 2px;
-    width: 50px;
+    padding: 10px;
+    width: 75px;
+    font-size: 1.5rem;
 }
 .input {
     background-color: hsl(0, 2%, 31%);
     flex: 1;
+    font-size: 2rem;
     overflow: hidden;
     max-width: 100%;
+    color: white;
+    text-align: right;
+    border-radius: 5px;
+    display: flex;
+}
+
+#result {
+    flex: 1;
+    font-size: inherit;
+    background: none; 
+    border: none; 
+    color: inherit;
+    width: 100%;
+    text-align: right;
+    outline: none;
+    padding: 10px;
 }
 
 .op {
-    background-color: cyan;
+    background-color: hsl(180, 100%, 40%);
+}
+
+.op:hover {
+    background-color: hsl(180, 100%, 45%);
+}
+
+.op:active {
+    background-color: hsl(180, 100%, 50%);
 }
 
 .delete, .equal {
-    background-color: orange;
+    background-color: hsl(39, 100%, 50%);
 }
 
+.delete:hover, .equal:hover {
+    background-color: hsl(39, 100%, 55%);
+}
+
+.delete:active, .equal:active {
+    background-color: hsl(39, 100%, 60%);
+}
 .allClear {
-    background-color: red;
+    background-color: hsl(0, 100%, 40%);
 }
 
-.top-buttons {
+.allClear:hover {
+    background-color: hsl(0, 100%, 45%);
+}
+
+.allClear:active {
+    background-color: hsl(0, 100%, 50%);
+}
+
+.top-buttons, .row-1, .row-2, .row-3, .row-4 {
     display: flex;
     justify-content: space-around;
 }
 
-.row-1 {
-    display: flex;
-    justify-content: space-around;
-}
-
-.row-2 {
-    display: flex;
-    justify-content: space-around;
-}
-
-.row-3 {
-    display: flex;
-    justify-content: space-around;
-}
-
-.row-4 {
-    display: flex;
-    justify-content: space-around;
-}
-
-opbutton:hover {
-
-}
