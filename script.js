@@ -18,7 +18,7 @@ let operator =  '';
 let secondNum = '';
 let answer = '';
 //result
-const result = document.querySelector('p#result')
+const result = document.querySelector('input#result')
 
 //operate calls the four operator function based on string
 const operate = function(operator, firstNum, secondNum) {
@@ -45,10 +45,10 @@ numButtons.forEach((numButton) => {
         const value = numButton.textContent;
         if (operator === ''){
             firstNum += value;
-            result.textContent = firstNum
+            result.value = firstNum
         } else {
             secondNum += value;
-            result.textContent = firstNum + ' ' + operator + ' ' + secondNum;
+            result.value = firstNum + ' ' + operator + ' ' + secondNum;
         }
     });
 });
@@ -59,7 +59,7 @@ opButtons.forEach((opButton) => {
     opButton.addEventListener('click', () => {
         checkButton();
         operator = opButton.textContent
-        result.textContent = firstNum + ' ' + operator
+        result.value = firstNum + ' ' + operator
     })
 })
 
@@ -69,7 +69,7 @@ function checkButton() {
         if (isNaN(answer)) {
             showError();
         } else {
-            result.textContent = answer;
+            result.value = answer;
            
             firstNum = answer.toString();
             secondNum= '';
@@ -86,7 +86,7 @@ equalButton.addEventListener('click', () => {
         if (isNaN(answer)) {
             showError();
         } else {
-        result.textContent = answer;
+        result.value = answer;
 
         firstNum = answer.toString();
         secondNum= '';
@@ -97,7 +97,7 @@ equalButton.addEventListener('click', () => {
 
 // misc
 function showError() {
-    result.textContent = "Error";
+    result.value = "Error";
     firstNum = '';  
     secondNum = '';  
     operator = '';
@@ -109,7 +109,7 @@ clear.addEventListener('click', () => {
     firstNum = '';  
     secondNum = '';  
     operator = '';
-    result.textContent = ''
+    result.value = '0'
 })
 
 const del = document.querySelector("button.delete")
@@ -117,14 +117,14 @@ const del = document.querySelector("button.delete")
 del.addEventListener('click', () => {
     if (secondNum !== ''){
         secondNum = secondNum.slice(0, -1);
-        result.textContent = firstNum + ' '  + operator + ' ' + secondNum;
+        result.value = firstNum + ' '  + operator + ' ' + secondNum;
     } 
     else if (operator !== '') {
        operator = operator.slice(0, -1);
-       result.textContent = firstNum + '' + operator;
+       result.value = firstNum + '' + operator;
     } 
     else if  (firstNum !== '') {
         firstNum = firstNum.slice(0, -1);
-        result.textContent = firstNum;
+        result.value = firstNum;
     }
 })
