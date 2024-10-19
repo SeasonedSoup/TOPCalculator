@@ -112,3 +112,19 @@ clear.addEventListener('click', () => {
     result.textContent = ''
 })
 
+const del = document.querySelector("button.delete")
+
+del.addEventListener('click', () => {
+    if (secondNum !== ''){
+        secondNum = secondNum.slice(0, -1);
+        result.textContent = firstNum + ' '  + operator + ' ' + secondNum;
+    } 
+    else if (operator !== '') {
+       operator = operator.slice(0, -1);
+       result.textContent = firstNum + '' + operator;
+    } 
+    else if  (firstNum !== '') {
+        firstNum = firstNum.slice(0, -1);
+        result.textContent = firstNum;
+    }
+})
